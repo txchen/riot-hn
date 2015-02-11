@@ -1,0 +1,28 @@
+<user-view>
+  <div class="view user-view" show={ user }>
+    <ul>
+      <li><span class="label">user:</span> { user.id }</li>
+      <li><span class="label">created:</span> { user.created } ago</li>
+      <li><span class="label">karma:</span> { user.karma }</li>
+      <li>
+        <span class="label">about:</span>
+        <div class="about" name="about"></div>
+      </li>
+    </ul>
+    <p class="links">
+      <a href="https://news.ycombinator.com/submitted?id={ user.id }">submissions</a><br>
+      <a href="https://news.ycombinator.com/threads?id={ user.id }">comments</a>
+    </p>
+  </div>
+  <script>
+  var store = require('../store')
+  var self = this
+  self.on('mount', function() {
+    store.fetchUser(opts, function (user) {
+      self.user = user
+      self.about.innerHTML = self.user.about
+      self.update()
+    })
+  })
+  </script>
+</user-view>

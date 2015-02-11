@@ -1,0 +1,8 @@
+var riot = require('riot')
+require('./components/item.tag')
+require('./components/comment.tag')
+require('./views/news-view.tag')
+require('./views/item-view.tag')
+require('./views/user-view.tag')
+require('./app.tag')
+riot.mount('app')

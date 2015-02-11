@@ -1,0 +1,37 @@
+{
+  "name": "riot_hn",
+  "version": "1.0.0",
+  "description": "hackernews by riotjs",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/txchen/riot_hn/"
+  },
+  "keywords": [
+    "riotjs",
+    "hackernews",
+    "browserify"
+  ],
+  "author": "Tianxiang Chen",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^8.1.3",
+    "http-server": "^0.7.4",
+    "minifyify": "^6.1.0",
+    "rewatch": "^0.4.0",
+    "rimraf": "^2.2.8",
+    "riotify": "0.0.7"
+  },
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "build": "npm run build:js",
+    "build:js": "browserify -t riotify -d src/index.js -p [minifyify --compressPath . --map index.js.map --output  build/index.js.map] -o build/index.js",
+    "watch:build": "rewatch 'src/**/*.*' -i 500 -c 'npm run build'",
+    "serve": "http-server -p 9090 .",
+    "dev": "echo 'open http://localhost:9090' && npm run serve & npm run watch:build"
+  },
+  "dependencies": {
+    "firebase": "^2.1.2",
+    "riot": "^2.0.8"
+  }
+}
