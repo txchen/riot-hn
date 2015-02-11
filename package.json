@@ -24,8 +24,9 @@
   },
   "scripts": {
     "clean": "rimraf dist/*",
-    "build": "npm run build:js",
+    "build": "npm run build:js && npm run build:css",
     "build:js": "browserify -t riotify -d src/index.js -p [minifyify --compressPath . --map index.js.map --output  build/index.js.map] -o build/index.js",
+    "build:css": "cp src/main.css build/main.css",
     "watch:build": "rewatch 'src/**/*.*' -i 500 -c 'npm run build'",
     "serve": "http-server -p 9090 .",
     "dev": "echo 'open http://localhost:9090' && npm run serve & npm run watch:build"
