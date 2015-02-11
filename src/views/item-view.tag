@@ -1,6 +1,6 @@
 <item-view>
-  <div class="view item-view" show={ item }>
-    <item class="item" if={ item } data={ item }></item>
+  <div class="view item-view" show={ items.length }>
+    <item class="item" each={ items } data={ this }></item>
     <ul class="poll-options" if={ pollOptions }>
       <li each={ pollOptions }>
         <p>{ text }</p>
@@ -16,17 +16,17 @@
   <script>
   var store = require('../store')
   var self = this
-  self.item = null
+  self.items = []
 
   fetchComments() {
-    store.fetchItems(self.item.kids, function (comments) {
+    store.fetchItems(self.items[0].kids, function (comments) {
       self.comments = comments
       self.update()
     })
   }
 
   fetchPollOptions() {
-    store.fetchItems(self.item.parts, function (options) {
+    store.fetchItems(self.items[0].parts, function (options) {
       self.pollOptions = options
       self.update()
     })
@@ -34,7 +34,7 @@
 
   self.on('mount', function() {
     store.fetchItem(opts, function (item) {
-      self.item = item
+      self.items = [ item ]
       self.fetchComments()
       if (item.type === 'poll') {
         self.fetchPollOptions()

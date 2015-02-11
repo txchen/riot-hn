@@ -15,13 +15,12 @@
   var store = require('../store')
   var self = this
   self.data = opts.data
-  console.log('dddddd')
-  console.log(self.data)
   self.open = true
 
   this.on('mount', function() {
     store.fetchItems(self.data.kids, function(comments) {
       self.comments = comments
+      self.update()
     })
     self.commentcontent.innerHTML = self.data.text
   })
