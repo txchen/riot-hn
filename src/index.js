@@ -1,4 +1,3 @@
-global.filters = require('./filters.js')
-var riot = require('riot')
+require('./filters.js')
 require('./app.tag')
-riot.mount('app')
+require('riot').mount('app')

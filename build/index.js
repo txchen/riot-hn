@@ -11,10 +11,7 @@ var riot=require("riot");riot.tag("item",'<span class="index">{ opts.index }.</s
 },{"riot":2}],6:[function(require,module,exports){
 var parser=document.createElement("a");filters={fromNow:function(e){var r=Date.now()/1e3-Number(e);return 3600>r?~~(r/60)+" minutes":86400>r?~~(r/3600)+" hours":~~(r/86400)+" days"},domain:function(e){return parser.href=e,parser.hostname}},module.exports=filters;
 },{}],7:[function(require,module,exports){
-(function (global){
-global.filters=require("./filters.js");var riot=require("riot");require("./app.tag"),riot.mount("app");
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
+require("./filters.js"),require("./app.tag"),require("riot").mount("app");
 },{"./app.tag":3,"./filters.js":6,"riot":2}],8:[function(require,module,exports){
 var api=new Firebase("https://hacker-news.firebaseio.com/v0"),storiesPerPage=30,cachedStoryIds=[],Emitter=require("events").EventEmitter,store=module.exports=new Emitter;api.child("topstories").on("value",function(e){cachedStoryIds=e.val(),store.emit("update")}),store.fetchItem=function(e,t){api.child("item/"+e).once("value",function(e){t(e.val())})},store.fetchUser=function(e,t){api.child("user/"+e).once("value",function(e){t(e.val())})},store.fetchItems=function(e,t){function r(r){o.push(r),o.length>=e.length&&t(o)}if(!e||!e.length)return t([]);var o=[];e.forEach(function(e){store.fetchItem(e,r)})},store.fetchItemsByPage=function(e,t){var r=(e-1)*storiesPerPage,o=e*storiesPerPage,s=cachedStoryIds.slice(r,o);store.fetchItems(s,t)};
 },{"events":1}],9:[function(require,module,exports){
