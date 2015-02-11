@@ -31,7 +31,6 @@
     "dev": "echo 'open http://localhost:9090' && npm run serve & npm run watch:build"
   },
   "dependencies": {
-    "firebase": "^2.1.2",
     "riot": "^2.0.8"
   }
 }

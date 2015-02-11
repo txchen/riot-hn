@@ -1,4 +1,4 @@
-var Firebase = require('firebase')
+//var Firebase = require('firebase')
 var api = new Firebase('https://hacker-news.firebaseio.com/v0')
 var storiesPerPage = 30
 var cachedStoryIds = []
