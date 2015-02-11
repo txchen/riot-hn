@@ -14,6 +14,8 @@
   </div>
 
   <script>
+  require('../components/item.tag')
+  require('../components/comment.tag')
   var store = require('../store')
   var self = this
   self.items = []

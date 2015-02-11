@@ -11,6 +11,7 @@
     </div>
   </div>
   <script>
+  require('../components/item.tag')
   var store = require('../store')
   var self = this
   self.page = opts
