@@ -3,7 +3,7 @@
   <p>
     <a class="title" href="{ href() }" target="_blank">{ itemdata.title }</a>
     <span class="domain" show={ showDomain() }>
-      ({ itemdata.url })
+      ({ filters.domain(itemdata.url) })
     </span>
   </p>
   <p class="subtext">
@@ -11,7 +11,7 @@
       { itemdata.score } points by
       <a href="#user/{ itemdata.by }">{ itemdata.by }</a>
     </span>
-    { time } ago
+    { filters.fromNow(itemdata.time) } ago
     <span class="comments-link" show={ showInfo() }>
       | <a href="#item/{ itemdata.id }">comments</a>
     </span>

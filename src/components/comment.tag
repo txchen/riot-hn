@@ -3,7 +3,7 @@
     <div class="comhead">
       <a class="toggle" onclick={ toggle }>{ open ? '[-]' : '[+]' }</a>
       <a href="#user/{ data.by }">{ data.by }</a>
-      { data.time } ago
+      { filters.fromNow(data.time) } ago
     </div>
     <div class="comment-content" name="commentcontent" show={ open }></div>
     <ul class="child-comments" if={ data.kids } show={ open }>

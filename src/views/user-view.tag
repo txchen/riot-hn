@@ -2,7 +2,7 @@
   <div class="view user-view" show={ user }>
     <ul>
       <li><span class="label">user:</span> { user.id }</li>
-      <li><span class="label">created:</span> { user.created } ago</li>
+      <li><span class="label">created:</span> { filters.fromNow(user.created) } ago</li>
       <li><span class="label">karma:</span> { user.karma }</li>
       <li>
         <span class="label">about:</span>
