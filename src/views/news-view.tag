@@ -1,4 +1,4 @@
-<news-view>s
+<news-view>
   <div class="view news-view" class={loading: !items.length}>
     <ul>
       <li class="item" each={ item, i in items } track-by="id">

@@ -9,7 +9,6 @@
       <a href="https://github.com/txchen/riot-hn" target="_blank">Source</a>
     </span>
   </div>
-  <div>current view: {currentview}</div>
   <div id="placeholder"></div>
 
   <script>
