@@ -16,5 +16,3 @@ filters = {
     return parser.hostname
   }
 }
-
-module.exports = filters;

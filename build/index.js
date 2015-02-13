@@ -9,7 +9,7 @@ var riot=require("riot");riot.tag("comment",'<li show="{ data.text }"> <div clas
 },{"../store":8,"riot":2}],5:[function(require,module,exports){
 var riot=require("riot");riot.tag("item",'<span class="index">{ opts.index }.</span> <p> <a class="title" href="{ href() }" target="_blank">{ itemdata.title }</a> <span class="domain" show="{ showDomain() }"> ({ filters.domain(itemdata.url) }) </span> </p> <p class="subtext"> <span show="{ showInfo() }"> { itemdata.score } points by <a href="#user/{ itemdata.by }">{ itemdata.by }</a> </span> { filters.fromNow(itemdata.time) } ago <span class="comments-link" show="{ showInfo() }"> | <a href="#item/{ itemdata.id }">comments</a> </span> </p>',function(t){var a=this;a.itemdata=t.data,this.href=function(){return a.itemdata.url||"#/item/"+a.itemdata.id}.bind(this),this.showInfo=function(){return"story"===a.itemdata.type||"poll"===a.itemdata.type}.bind(this),this.showDomain=function(){return"story"===a.itemdata.type}.bind(this)});
 },{"riot":2}],6:[function(require,module,exports){
-var parser=document.createElement("a");filters={fromNow:function(e){var r=Date.now()/1e3-Number(e);return 3600>r?~~(r/60)+" minutes":86400>r?~~(r/3600)+" hours":~~(r/86400)+" days"},domain:function(e){return parser.href=e,parser.hostname}},module.exports=filters;
+var parser=document.createElement("a");filters={fromNow:function(r){var e=Date.now()/1e3-Number(r);return 3600>e?~~(e/60)+" minutes":86400>e?~~(e/3600)+" hours":~~(e/86400)+" days"},domain:function(r){return parser.href=r,parser.hostname}};
 },{}],7:[function(require,module,exports){
 require("./filters.js"),require("./app.tag"),require("riot").mount("app");
 },{"./app.tag":3,"./filters.js":6,"riot":2}],8:[function(require,module,exports){
