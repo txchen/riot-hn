@@ -20,7 +20,7 @@
     "minifyify": "^6.1.0",
     "rewatch": "^0.4.0",
     "rimraf": "^2.2.8",
-    "riotify": "0.0.7"
+    "riotify": "^0.0.8"
   },
   "scripts": {
     "clean": "rimraf dist/*",
