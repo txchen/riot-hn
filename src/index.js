@@ -1,3 +1,3 @@
 require('./filters.js')
-require('./app.tag')
+require('./app.html')
 require('riot').mount('app')

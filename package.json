@@ -20,12 +20,12 @@
     "minifyify": "^6.1.0",
     "rewatch": "^0.4.0",
     "rimraf": "^2.2.8",
-    "riotify": "^0.0.8"
+    "riotify": "^0.0.9"
   },
   "scripts": {
     "clean": "rimraf dist/*",
     "build": "npm run build:js && npm run build:css",
-    "build:js": "browserify -t riotify -d src/index.js -p [minifyify --compressPath . --map index.js.map --output  build/index.js.map] -o build/index.js",
+    "build:js": "browserify -t [riotify --ext html] -d src/index.js -p [minifyify --compressPath . --map index.js.map --output  build/index.js.map] -o build/index.js",
     "build:css": "cp src/main.css build/main.css",
     "watch:build": "rewatch 'src/**/*.*' -i 500 -c 'npm run build'",
     "serve": "http-server -p 9090 .",

@@ -29,15 +29,15 @@
   studyRoute(view, id) {
     switch(view) {
     case 'user':
-      require('./views/user-view.tag')
+      require('./views/user-view.html')
       self.loadView('user-view', id)
       break
     case 'item':
-      require('./views/item-view.tag')
+      require('./views/item-view.html')
       self.loadView('item-view', id)
       break
     case 'news':
-      require('./views/news-view.tag')
+      require('./views/news-view.html')
       self.loadView('news-view', id)
       break
     default:
