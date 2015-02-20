@@ -6,15 +6,15 @@
       </li>
     </ul>
     <div class="nav" show={ items.length }>
-      <a if={ opts > 1 } href="#news/{ opts - 1 }">&lt; prev</a>
-      <a if={ opts < 4 } href="#news/{ opts - -1 }">more...</a>
+      <a if={ page > 1 } href="#news/{ page - 1 }">&lt; prev</a>
+      <a if={ page < 4 } href="#news/{ page - -1 }">more...</a>
     </div>
   </div>
   <script>
   require('../components/item.html')
   var store = require('../store')
   var self = this
-  self.page = opts
+  self.page = opts.data
   self.items = []
 
   fetchNews() {

@@ -22,7 +22,7 @@
     var ph = document.getElementById('placeholder');
     ph.insertAdjacentHTML('afterend', '<div id="hnview"></div>');
     self.currentview = viewName + id
-    riot.mountTo(document.getElementById('hnview'), viewName, id)
+    riot.mountTo(document.getElementById('hnview'), viewName, {data: id})
     self.update()
   }
 

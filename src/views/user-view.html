@@ -18,7 +18,7 @@
   var store = require('../store')
   var self = this
   self.on('mount', function() {
-    store.fetchUser(opts, function (user) {
+    store.fetchUser(opts.data, function (user) {
       self.user = user
       self.about.innerHTML = self.user.about
       self.update()

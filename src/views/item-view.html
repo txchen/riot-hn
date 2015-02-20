@@ -35,7 +35,7 @@
   }
 
   self.on('mount', function() {
-    store.fetchItem(opts, function (item) {
+    store.fetchItem(opts.data, function (item) {
       self.items = [ item ]
       self.fetchComments()
       if (item.type === 'poll') {
