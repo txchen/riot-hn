@@ -9,21 +9,17 @@
       <a href="https://github.com/txchen/riot-hn" target="_blank">Source</a>
     </span>
   </div>
-  <div id="placeholder"></div>
+  <div id="hnview"></div>
 
   <script>
   var self = this
+  self.currentView = null
 
   loadView(viewName, id) {
-    var oldEl = document.getElementById('hnview')
-    if (oldEl) {
-      oldEl.remove()
+    if (self.currentView) {
+      self.currentView.unmount()
     }
-    var ph = document.getElementById('placeholder');
-    ph.insertAdjacentHTML('afterend', '<div id="hnview"></div>');
-    self.currentview = viewName + id
-    riot.mountTo(document.getElementById('hnview'), viewName, {data: id})
-    self.update()
+    self.currentView = riot.mount('div#hnview', viewName, {data: id})[0]
   }
 
   studyRoute(view, id) {
