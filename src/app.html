@@ -17,7 +17,7 @@
 
   loadView(viewName, id) {
     if (self.currentView) {
-      self.currentView.unmount()
+      self.currentView.unmount(true)
     }
     self.currentView = riot.mount('div#hnview', viewName, {data: id})[0]
   }
