@@ -7,8 +7,10 @@
         <p class="subtext">{ score } points</p>
       </li>
     </ul>
-    <ul class="comments" if={ comments }>
-      <comment each={ comments } data={ this }></comment>
+    <ul class="comments">
+      <div each={ c, i in comments }>
+        <comment data={ c }></comment>
+      </div>
     </ul>
     <p show={ !comments.length }>No comments yet.</p>
   </div>

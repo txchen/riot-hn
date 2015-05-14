@@ -7,7 +7,9 @@
     </div>
     <div class="comment-content" name="commentcontent" show={ open }></div>
     <ul class="child-comments" if={ data.kids } show={ open }>
-      <comment each={ comments } data={ this }></comment>
+      <div each={ c, i in comments }>
+        <comment data={ c }></comment>
+      <div>
     </ul>
   </li>
 
