@@ -27,6 +27,6 @@
     "dev": "light-server -s . -p 9090 -w 'src/**/*.js, src/**/*.html # npm run build:js' -w 'src/main.css # npm run build:css # reloadcss'"
   },
   "dependencies": {
-    "riot": "^2.0.15"
+    "riot": "^2.1.0"
   }
 }

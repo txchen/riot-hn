@@ -36,15 +36,13 @@
     })
   }
 
-  self.on('mount', function() {
-    store.fetchItem(opts.data, function (item) {
-      self.items = [ item ]
-      self.fetchComments()
-      if (item.type === 'poll') {
-        self.fetchPollOptions()
-      }
-      self.update()
-    })
+  store.fetchItem(opts.data, function (item) {
+    self.items = [ item ]
+    self.fetchComments()
+    if (item.type === 'poll') {
+      self.fetchPollOptions()
+    }
+    self.update()
   })
   </script>
 </item-view>

@@ -18,13 +18,11 @@
   var self = this
   self.data = opts.data
   self.open = true
+  self.commentcontent.innerHTML = self.data.text
 
-  this.on('mount', function() {
-    store.fetchItems(self.data.kids, function(comments) {
-      self.comments = comments
-      self.update()
-    })
-    self.commentcontent.innerHTML = self.data.text
+  store.fetchItems(self.data.kids, function(result) {
+    self.comments = result
+    self.update()
   })
 
   toggle(e) {
