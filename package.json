@@ -16,6 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^10.1.3",
+    "eslint": "^0.24.1",
     "light-server": "^1.0.5",
     "minifyify": "^7.0.0",
     "riotify": "^0.0.9"
@@ -24,6 +25,7 @@
     "build": "npm run build:js && npm run build:css",
     "build:js": "browserify -t [riotify --ext html] -d src/index.js -p [minifyify --compressPath . --map index.js.map --output build/index.js.map] -o build/index.js",
     "build:css": "cp src/main.css build/main.css",
+    "lint": "eslint -c ./.eslintrc src",
     "dev": "light-server -s . -p 9090 -w 'src/**/*.js, src/**/*.html # npm run build:js' -w 'src/main.css # npm run build:css # reloadcss'"
   },
   "dependencies": {

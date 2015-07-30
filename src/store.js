@@ -1,9 +1,8 @@
-//var Firebase = require('firebase')
 var api = new Firebase('https://hacker-news.firebaseio.com/v0')
 var storiesPerPage = 30
 var cachedStoryIds = []
 var Emitter = require('events').EventEmitter
-var store = module.exports = new Emitter()
+var store = new Emitter()
 
 /**
  * Subscribe to real time updates of the top 100 stories,
@@ -75,3 +74,5 @@ store.fetchItemsByPage = function (page, cb) {
   var ids = cachedStoryIds.slice(start, end)
   store.fetchItems(ids, cb)
 }
+
+module.exports = store

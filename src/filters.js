@@ -1,7 +1,7 @@
 var parser = document.createElement('a')
 
-filters = {
-  fromNow: function(time) {
+window.filters = {
+  fromNow: function (time) {
     var between = Date.now() / 1000 - Number(time)
     if (between < 3600) {
       return ~~(between / 60) + ' minutes'
@@ -11,7 +11,7 @@ filters = {
       return ~~(between / 86400) + ' days'
     }
   },
-  domain: function(url) {
+  domain: function (url) {
     parser.href = url
     return parser.hostname
   }
