@@ -147,7 +147,7 @@
     "no-void": 0,
     "no-warning-comments": 0,
     "no-with": 2,
-    "no-wrap-func": 2,
+    "no-extra-parens": 2,
     "object-curly-spacing": 0,
     "object-shorthand": 0,
     "one-var": [2, { "initialized": "never" }],
