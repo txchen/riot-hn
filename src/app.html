@@ -38,14 +38,12 @@
       break
     default:
       riot.route('news/1')
-      self.loadView('news-view', 1)
     }
   }
 
   riot.route(self.studyRoute)
   this.on('mount', function() {
-    riot.route.start()
-    riot.route.exec()
+    riot.route.start(true)
   })
   </script>
 </app>
