@@ -114,7 +114,7 @@ a {
   padding-left:0;
   margin-bottom:30px
 }
-.item-view .item .comments-link, .item-view .item .index {
+.item-view .item .index {
   display:none
 }
 .item-view .poll-options {
