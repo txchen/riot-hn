@@ -1,0 +1,8 @@
+{
+  "port": 9090,
+  "serveDir": ".",
+  "watchexps": [
+    "src/**/*.js, src/**/*.html # npm run build:js",
+    "src/main.css # npm run build:css # reloadcss"
+  ]
+}
