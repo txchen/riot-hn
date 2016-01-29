@@ -29,6 +29,6 @@
     "dev": "light-server -c .lightserverrc"
   },
   "dependencies": {
-    "riot": "^2.3.12"
+    "riot": "^2.3.13"
   }
 }
