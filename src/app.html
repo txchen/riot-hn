@@ -1,15 +1,17 @@
 <app>
-  <div id="header">
-    <a id="yc" href="http://www.ycombinator.com">
-      <img src="https://news.ycombinator.com/y18.gif">
-    </a>
-    <h1><a href="#">Hacker News</a></h1>
-    <span class="source">
-      Built with <a href="http://riotjs.com/" target="_blank">Riot.js</a> |
-      <a href="https://github.com/txchen/riot-hn" target="_blank">Source</a>
-    </span>
+  <div id="wrapper">
+    <div id="header">
+      <a id="yc" href="http://www.ycombinator.com">
+        <img src="https://news.ycombinator.com/y18.gif">
+      </a>
+      <h1><a href="#">Hacker News</a></h1>
+      <span class="source">
+        Built with <a href="http://riotjs.com/" target="_blank">Riot.js</a> |
+        <a href="https://github.com/txchen/riot-hn" target="_blank">Source</a>
+      </span>
+    </div>
+    <div id="hnview"></div>
   </div>
-  <div id="hnview"></div>
 
   <script>
   require('./views/user-view.html')

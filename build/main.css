@@ -1,9 +1,7 @@
 body, html {
   font-family:Verdana;
-  font-size:13px;
-  margin:0;
+  font-size:10pt;
   height:100%;
-  background-color:#f6f6ef
 }
 ul {
   list-style-type:none;
@@ -14,6 +12,12 @@ a {
   color:#000;
   cursor:pointer;
   text-decoration:none
+}
+#wrapper {
+  position: relative;
+  width: 85%;
+  min-height: 80px;
+  margin: 0 auto;
 }
 #header {
   background-color:#f60;
@@ -54,7 +58,8 @@ a {
   width:100%;
   transition:opacity .1s ease;
   box-sizing:border-box;
-  padding:8px 20px
+  padding:8px 20px;
+  background-color: #f6f6ef;
 }
 .view.v-enter, .view.v-leave {
   opacity:0
